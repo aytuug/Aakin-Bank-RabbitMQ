@@ -59,22 +59,22 @@ public class AakinBankApplication implements CommandLineRunner {
 				.id("100")
 				.customerId("3242342")
 				.city(City.LONDON)
-				.balance(999.00)
+				.balance(1000.00)
 				.currency(Currency.EUR)
 				.build();
 
 		Account a2 = Account.builder()
-				.id("100")
+				.id("101")
 				.customerId("65423425")
 				.city(City.TEKIRDAG)
-				.balance(222.12)
+				.balance(1000.00)
 				.build();
 
 		Account a3 = Account.builder()
-				.id("100")
+				.id("102")
 				.customerId("5652351")
 				.city(City.ISTANBUL)
-				.balance(762.98)
+				.balance(1000.00)
 				.build();
 		accountRepository.saveAll(Arrays.asList(a1, a2, a3));
 

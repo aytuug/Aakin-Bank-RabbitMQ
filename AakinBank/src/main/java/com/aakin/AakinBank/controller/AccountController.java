@@ -2,6 +2,7 @@ package com.aakin.AakinBank.controller;
 
 import com.aakin.AakinBank.dto.AccountDto;
 import com.aakin.AakinBank.dto.CreateAccountRequest;
+import com.aakin.AakinBank.dto.MoneyTransferRequest;
 import com.aakin.AakinBank.dto.UpdateAccountRequest;
 import com.aakin.AakinBank.service.AccountService;
 import org.springframework.http.ResponseEntity;
@@ -54,6 +55,12 @@ public class AccountController {
     public ResponseEntity<AccountDto> addMoney(@PathVariable String id,
                                                     @PathVariable Double amount){
         return ResponseEntity.ok(accountService.addMoney(id, amount));
+    }
+
+    @PutMapping("/transfer")
+    public ResponseEntity<String> transferMoney(@RequestBody MoneyTransferRequest transferRequest){
+        accountService.transferMoney(transferRequest);
+        return ResponseEntity.ok("isleminiz basariyla tamamlandi");
     }
 
 
