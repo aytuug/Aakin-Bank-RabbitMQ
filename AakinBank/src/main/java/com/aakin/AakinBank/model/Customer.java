@@ -3,8 +3,7 @@ package com.aakin.AakinBank.model;
 import lombok.*;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.SimpleTimeZone;
 
 @Getter
@@ -19,5 +18,8 @@ public class Customer {
     private String name;
     private Integer dateOfBirth;
     private City city;
-    private String  address;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    private Address address;
 }

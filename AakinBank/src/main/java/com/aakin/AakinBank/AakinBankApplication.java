@@ -1,9 +1,6 @@
 package com.aakin.AakinBank;
 
-import com.aakin.AakinBank.model.Account;
-import com.aakin.AakinBank.model.City;
-import com.aakin.AakinBank.model.Currency;
-import com.aakin.AakinBank.model.Customer;
+import com.aakin.AakinBank.model.*;
 import com.aakin.AakinBank.repository.AccountRepository;
 import com.aakin.AakinBank.repository.CustomerRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -36,21 +33,21 @@ public class AakinBankApplication implements CommandLineRunner {
 				.id("3242342")
 				.name("aytug akin")
 				.city(City.LONDON)
-				.address("Gurbet")
+				.address(Address.builder().city(City.ISTANBUL).postCode("333").addressDetails("test 3 addres").build())
 				.dateOfBirth(1999)
 				.build();
 		Customer c2 = Customer.builder()
 				.id("65423425")
 				.name("test1 test1")
 				.city(City.TEKIRDAG)
-				.address("EV")
+				.address(Address.builder().city(City.TEKIRDAG).postCode("111").addressDetails("test 1 addres").build())
 				.dateOfBirth(2011)
 				.build();
 		Customer c3 = Customer.builder()
 				.id("5652351")
 				.name("TEST2 TEST2")
 				.city(City.ISTANBUL)
-				.address("is")
+				.address(Address.builder().city(City.ADANA).postCode("222").addressDetails("test 2 addres").build())
 				.dateOfBirth(2000)
 				.build();
 

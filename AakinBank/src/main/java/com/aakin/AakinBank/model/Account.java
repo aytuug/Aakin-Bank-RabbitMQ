@@ -9,12 +9,18 @@ import javax.persistence.Id;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
+@EqualsAndHashCode
 @Builder
+
+
+@Entity
 public class Account {
 
     @Id
     private String id;
+
+
+
     private String customerId;
     private Double balance;
     private City city;

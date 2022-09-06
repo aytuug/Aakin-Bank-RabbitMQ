@@ -29,7 +29,7 @@ public class CustomerService {
 
         Customer customer = new Customer();
         customer.setId(customerRequest.getId());
-        customer.setAddress(customerRequest.getAddress());
+        //customer.setAddress(customerRequest.getAddress());
         customer.setName(customerRequest.getName());
         customer.setDateOfBirth(customerRequest.getDateOfBirth());
         customer.setCity(City.valueOf(customerRequest.getCity().name()));
@@ -68,7 +68,7 @@ public class CustomerService {
 
         customerOptional.ifPresent(customer -> {
             customer.setName(updateCustomerRequest.getName());
-            customer.setAddress(updateCustomerRequest.getAddress());
+            //customer.setAddress(updateCustomerRequest.getAddress());
             customer.setCity(City.valueOf(updateCustomerRequest.getCity().name()));
             customer.setDateOfBirth(updateCustomerRequest.getDateOfBirth());
 
